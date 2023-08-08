@@ -1,6 +1,6 @@
 const openNav = document.querySelector('.nav-open');
 const closeNav = document.querySelector('.nav-close');
-const mobileNav = document.querySelector('.mobile-nav');
+const mobileNav = document.querySelector('nav');
 
 openNav.addEventListener('click', () => {
     mobileNav.style.display = "block"
@@ -15,6 +15,7 @@ closeNav.addEventListener('click', () => {
     closeNav.style.display = "none"
     openNav.style.display = "block"
 })
+
 
 
 const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
