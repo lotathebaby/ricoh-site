@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body {
     overflow-x: hidden;
 }
@@ -8,10 +11,17 @@ heading {
     justify-content: space-between;
 }
 
-.mobile-navbar {
+.nav-close {
     display: none;
 }
 
+nav {
+    margin-right: 3em;
+}
+
+.nav-open {
+    display: none;
+}
 .logo-area {
     display: flex;
 }
@@ -151,7 +161,7 @@ h2 {
     color: white;
     font-size: 16px;
     transition: 0.4s;
-    line-height: 40px;
+    line-height: 10px;
     width: 0px;
 
 }
@@ -729,6 +739,10 @@ h2 {
     font-weight: 700;
   }
 
+
+  
+
+
   @media only screen and (max-width: 768px) {
     .items {
       animation: carouselAnim 35s infinite alternate linear;
@@ -752,6 +766,64 @@ h2 {
   .name {
     font-weight: bold;
   }
+  .topnav {
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+  }
+
+  #toggle {
+    display: block;
+    width: 28px;
+    height: 30px;
+    margin: 30px auto 10px;
+  }
+  
+  #toggle span:after,
+  #toggle span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -9px;
+  }
+  #toggle span:after{
+    top: 9px;
+  }
+  #toggle span {
+    position: relative;
+    display: block;
+  }
+  
+  #toggle span,
+  #toggle span:after,
+  #toggle span:before {
+    width: 100%;
+    height: 5px;
+    background-color: #888;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+  
+  /* on activation */
+  #toggle.on span {
+    background-color: transparent;
+  }
+  #toggle.on span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #toggle.on span:after {
+    transform: rotate(-45deg) translate(7px, -8px);
+  }
+  #toggle.on + #menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+
   
   @keyframes carouselAnim {
     from {
@@ -798,53 +870,73 @@ h2 {
 
     .searchBox {
         margin-top: -6em;
+        margin-bottom: 4em;
     }
+
+    heading {
+        flex-direction: row;
+    }
+
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1em;
+    }
+
+    .searchBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%,50%);
+        background: grey;
+        height: 40px;
+        border-radius: 40px;
+        padding: 20px;
+    
+    }
+    
+    .searchBox:hover > .searchInput {
+        width: 240px;
+        padding: 0 6px;
+    }
+    
+    .searchBox:hover > .searchButton {
+      background: white;
+      color : #2f3640;
+    }
+    
+    .searchButton {
+        color: white;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+    
+    .searchInput {
+        border:none;
+        background: none;
+        outline:none;
+        float:left;
+        padding: 0;
+        color: white;
+        font-size: 14px;
+        transition: 0.4s;
+        line-height: 5px;
+        width: 0px;
+    
     }
 
   @media only screen and (max-width: 481px) {
-    heading {
-        flex-direction: column;
-    }
-
     .logo-area {
         justify-content: center;
     }
-
-    .desktop-nav {
-        display: none;
-    }
-
-    .mobile-navbar {
-        position: relative;
-    }
-
-    .nav-open, .nav-close {
-        width: 1.5em;
-        height: 1.5em;
-        margin-right: 0.8em;
-        margin-top: 1em;
-        position: absolute;
-        left: 330px;
-        bottom: 20px;
-    }
-
-    .search {
-        position: relative;
-        left: 290px;
-        bottom: 10px;
-    }
-
-    .mobile-nav > ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
-        z-index: 1;
-        right: 10px;
-    }
+}
 
    /* Hero section */
 .hero-section {
@@ -869,6 +961,7 @@ h2 {
   #about-section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5em;
   }
   
   .description {
@@ -889,6 +982,10 @@ h2 {
   .rate > p > span {
     font-size: 2em;
     margin-right: 0.2em;
+  }
+
+  .vendor-section {
+    margin-top: 13em;
   }
 
   .about-grid {
