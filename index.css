@@ -6,6 +6,30 @@ body {
     height: 100%;
 }
 
+header {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+}
+
+.logo-area > img {
+    width: 4em;
+    height: 4em;
+}
+
+.logo-area > p {
+    font-family: 'Open sans', sans-serif;
+    font-size: 0.9em;
+}
+
+span > img {
+    width: 0.5em;
+}
+
 .flex{
     display: flex;
     gap: var(--gap, 1rem);
