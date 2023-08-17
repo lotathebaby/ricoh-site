@@ -96,14 +96,16 @@ span > img {
         position: absolute;
         z-index: 9999;
         /* background-color: orangered; */
-        background-image:url(/image/icons8-hamburger-24.png);
+        background-image: url("nav\ bar.png");
+        /* background-size:contain; */
         background-repeat: no-repeat;
-         width: 5rem;
+         width: 2.8rem;
+         height: 2.8rem;
          background-repeat: no-repeat;
         border: 0;
         aspect-ratio: 1;
-        top: 2rem;
-        right: 2rem;
+        top: 1rem;
+        right: 1rem;
     }
 
     /* .mobile-nav-toggle[aria-expanded="true"]{
